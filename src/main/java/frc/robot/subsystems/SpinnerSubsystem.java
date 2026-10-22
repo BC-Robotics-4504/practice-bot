@@ -25,6 +25,13 @@ public class SpinnerSubsystem extends SubsystemBase {
             }
         );
     }
+    public Command fastTurnOn(){
+        return runOnce(
+            () -> {
+                m_spinnerMotor.setVoltage(SpinnerConstants.kFastMotorVoltage);
+            }
+        );
+    }
      public Command reverseOn() {
         return runOnce(
             () -> {
@@ -32,7 +39,13 @@ public class SpinnerSubsystem extends SubsystemBase {
             }
         );
     }
-
+    public Command fastReverseOn() {
+        return runOnce(
+            () -> {
+                m_spinnerMotor.setVoltage(SpinnerConstants.kFastMotorVoltage2);
+            }
+        );
+    }
     public Command turnOff() {
         return runOnce(
             () -> {

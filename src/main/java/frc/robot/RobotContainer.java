@@ -35,8 +35,16 @@ public class RobotContainer {
     m_driverController.leftTrigger()
     .onTrue(m_spinnerSubsystem.turnOn());
 
+    m_driverController.leftTrigger()
+    .and(m_driverController.a())
+    .onTrue(m_spinnerSubsystem.fastTurnOn());
+
     m_driverController.rightTrigger()
     .onTrue(m_spinnerSubsystem.reverseOn());
+
+    m_driverController.rightTrigger()
+    .and(m_driverController.a())
+    .onTrue(m_spinnerSubsystem.fastReverseOn());
 
     m_driverController.b()
     .onTrue(m_spinnerSubsystem.turnOff());
