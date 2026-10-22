@@ -107,9 +107,13 @@ public class SpinnerSubsystem extends SubsystemBase {
     }
 
     public Command wordToMorse(String s) {
-        for (int i = 1; i < s.length()-1; i++) {
-            
-        }
+        
+
+        return composeMorseWord([])
+    }
+
+    public Command sentanceToMorse(String s) {
+
     }
 
     private Command composeMorseChar(Command... dits) {
