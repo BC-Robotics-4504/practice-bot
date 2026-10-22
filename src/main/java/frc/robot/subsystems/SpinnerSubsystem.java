@@ -47,18 +47,88 @@ public class SpinnerSubsystem extends SubsystemBase {
         return Commands.waitSeconds(SpinnerConstants.kDitSeconds * 7);
     }
 
-    public Command charToMorse(char c) {
+    public Command letterToMorse(char c) {
         switch (c) {
             case 'a':
-                return composeMorseChar(dot())
+                return composeMorseChar(dot(), dash());
+            case 'b':
+                return composeMorseChar(dash(), dot(), dot(), dot());
+            case 'c':
+                return composeMorseChar(dash(), dot(), dash(), dot());
+            case 'd':
+                return composeMorseChar(dash(), dot(), dot());
+            case 'e':
+                return composeMorseChar(dot());
+            case 'f':
+                return composeMorseChar(dot(), dot(), dash(), dot());
+            case 'g':
+                return composeMorseChar(dash(), dash(), dot());
+            case 'h':
+                return composeMorseChar(dot(), dot(), dot(), dot());
+            case 'i':
+                return composeMorseChar(dot(), dot());
+            case 'j':
+                return composeMorseChar(dot(), dash(), dash(), dash());
+            case 'k':
+                return composeMorseChar(dash(), dot(), dash());
+            case 'l':
+                return composeMorseChar(dot(), dash(), dot(), dot());
+            case 'm':
+                return composeMorseChar(dash(), dash());
+            case 'n':
+                return composeMorseChar(dash(), dot());
+            case 'o':
+                return composeMorseChar(dash(), dash(), dash());
+            case 'p':
+                return composeMorseChar(dot(), dash(), dash(), dot());
+            case 'q':
+                return composeMorseChar(dash(), dash(), dot(), dash());
+            case 'r':
+                return composeMorseChar(dot(), dash(), dot());
+            case 's':
+                return composeMorseChar(dot(), dot(), dot());
+            case 't':
+                return composeMorseChar(dash());
+            case 'u':
+                return composeMorseChar(dot(), dot(), dash());
+            case 'v':
+                return composeMorseChar(dot(), dot(), dot(), dash());
+            case 'w':
+                return composeMorseChar(dot(), dash(), dash());
+            case 'x':
+                return composeMorseChar(dash(), dot(), dot(), dash());
+            case 'y':
+                return composeMorseChar(dash(), dot(), dash(), dash());
+            case 'z':
+                return composeMorseChar(dash(), dash(), dot(), dot());
+            default:
+                throw new IllegalArgumentException("Unsupported character: " + c);
+        }
+    }
+
+    public Command wordToMorse(String s) {
+        for (int i = 1; i < s.length()-1; i++) {
+            
         }
     }
 
     private Command composeMorseChar(Command... dits) {
-        Command command = Commands.waitSeconds(0);
-        for (int i = 0; i < dits.length; i++) {
-           
+        Command command = dits[0].andThen(ditSpace());
+
+        for (int i = 1; i < dits.length-1; i++) {
+           command = command.andThen(dits[i]).andThen(ditSpace());
         }
-        return command;
+
+        return command.andThen(dits[dits.length-1]);
+    }
+
+    private Command composeMorseWord(Command... chars) {
+        Command command = chars[0].andThen(characterSpace());
+
+        for (int i = 1; i < chars.length-1; i++) {
+           command = command.andThen(chars[i]).andThen(characterSpace());
+        }
+
+        return command.andThen(chars[chars.length-1]);
     }
 }
