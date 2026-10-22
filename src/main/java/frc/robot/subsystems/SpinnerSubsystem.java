@@ -25,6 +25,13 @@ public class SpinnerSubsystem extends SubsystemBase {
             }
         );
     }
+     public Command reverseOn() {
+        return runOnce(
+            () -> {
+                m_spinnerMotor.setVoltage(SpinnerConstants.kMotorVoltage2);
+            }
+        );
+    }
 
     public Command turnOff() {
         return runOnce(
