@@ -16,5 +16,14 @@ public final class Constants {
   public static class OperatorConstants {
     public static final int kDriverControllerPort = 0;
   }
-
+  public static class koolConstants {
+    public static final int koolMotorVoltage1 = 4;
+    public static final int koolMotorVoltage2 = 8;
+    public static final int koolMotorVoltageN1 = -4;
+    public static final int koolMotorVoltageN2 = -8;
+    public static final int koolMotorCanId = 50;
+  }
 }
+
+
+
