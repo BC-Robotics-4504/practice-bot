@@ -35,6 +35,7 @@ public class RobotContainer {
     m_driverController.b().onTrue(m_67ebike.runNHigh());
     m_driverController.x().onTrue(m_67ebike.runLow());
     m_driverController.y().onTrue(m_67ebike.runNLow());
+    m_driverController.rightTrigger().onTrue(m_67ebike.runOff());
   }
 
   /**
