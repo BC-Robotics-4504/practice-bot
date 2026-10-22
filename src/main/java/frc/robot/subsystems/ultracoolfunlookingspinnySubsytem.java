@@ -13,14 +13,14 @@ public class ultracoolfunlookingspinnySubsytem extends SubsystemBase{
     public ultracoolfunlookingspinnySubsytem() {
         m_67ebikeMotor = new SparkMax(
             koolConstants.koolMotorCanId,
-            MotorType.kBrushless,   
+            MotorType.kBrushless  
         );
     }
 
     public Command runHigh() {
         return runOnce(
             () -> {
-                m_67ebikeMotor.setVoltage(koolConstants.koolMotorVoltage2)
+                m_67ebikeMotor.setVoltage(koolConstants.koolMotorVoltage2);
             }
         );
     }
@@ -28,7 +28,7 @@ public class ultracoolfunlookingspinnySubsytem extends SubsystemBase{
     public Command runNHigh() {
         return runOnce(
             () -> {
-                m_67ebikeMotor.setVoltage(koolConstants.koolMotorVoltageN2)
+                m_67ebikeMotor.setVoltage(koolConstants.koolMotorVoltageN2);
             }
         );
     }
@@ -36,7 +36,7 @@ public class ultracoolfunlookingspinnySubsytem extends SubsystemBase{
     public Command runLow() {
         return runOnce(
             () -> {
-                m_67ebikeMotor.setVoltage(koolConstants.koolMotorVoltage1)
+                m_67ebikeMotor.setVoltage(koolConstants.koolMotorVoltage1);
             }
         );
     }
@@ -44,7 +44,7 @@ public class ultracoolfunlookingspinnySubsytem extends SubsystemBase{
     public Command runNLow() {
         return runOnce(
             () -> {
-                m_67ebikeMotor.setVoltage(koolConstants.koolMotorVoltageN1)
+                m_67ebikeMotor.setVoltage(koolConstants.koolMotorVoltageN1);
             }
         );
     }
