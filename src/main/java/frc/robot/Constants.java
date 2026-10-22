@@ -16,9 +16,10 @@ public final class Constants {
   public static class OperatorConstants {
     public static final int kDriverControllerPort = 0;
   }
-  public final class TacosMotorConstants {
-    public static final int kTacosMotorCanID = 50;
-    public static final int kTacosMotorVoltage = 8;
-    public static final int kTacosMotorReverseVoltage = -8;
+    public static class TacosMotorConstants {
+      public static final int kTacosMotorCanID = 50;
+      public static final int kTacosMotorVoltage = 8;
+      public static final int kTacosMotorReverseVoltage = -8;
+    }
   }
-}
+ 
