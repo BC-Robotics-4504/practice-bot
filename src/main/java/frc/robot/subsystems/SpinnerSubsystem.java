@@ -1,5 +1,7 @@
 package frc.robot.subsystems;
 
+import java.util.ArrayList;
+
 import com.revrobotics.spark.SparkMax;
 import com.revrobotics.spark.SparkLowLevel.MotorType;
 
@@ -107,17 +109,24 @@ public class SpinnerSubsystem extends SubsystemBase {
     }
 
     public Command wordToMorse(String s) {
-        Command[] charCommands;
+        ArrayList<Command> charCommands = new ArrayList<>();
 
         for (int i = 0; i < s.length(); i++) {
-            charCommands
+            charCommands.add(letterToMorse(s.charAt(i)));
         }
 
-        return composeMorseWord()
+        return composeMorseWord(charCommands.toArray(new Command[0]));
     }
 
     public Command sentanceToMorse(String s) {
+        String[] words = s.split("\\s+");
+        ArrayList<Command> wordCommands = new ArrayList<>();
 
+        for (int i = 0; i < words.length; i++) {
+            wordCommands.add(wordToMorse(words[i]));
+        }
+
+        return composeMorseSentance(wordCommands.toArray(new Command[0]));
     }
 
     private Command composeMorseChar(Command... dits) {
@@ -138,5 +147,15 @@ public class SpinnerSubsystem extends SubsystemBase {
         }
 
         return command.andThen(chars[chars.length-1]);
+    }
+
+    private Command composeMorseSentance(Command... words) {
+        Command command = words[0].andThen(wordSpace());
+
+        for (int i = 1; i < words.length-1; i++) {
+           command = command.andThen(words[i]).andThen(wordSpace());
+        }
+
+        return command.andThen(words[words.length-1]);
     }
 }
