@@ -48,7 +48,7 @@ public class RobotContainer {
     // m_driverController.b()
     // .onTrue(m_spinnerSubsystem.turnOff());
 
-    m_driverController.a().onTrue(m_spinnerSubsystem.sentanceToMorse("Hello, world!"));
+    m_driverController.a().onTrue(m_spinnerSubsystem.sentanceToMorse("hello world"));
   }
 
   /**

@@ -19,6 +19,6 @@ public final class Constants {
   public static class SpinnerConstants {
     public static final int kMotorCanId = 50;
     public static final int kMotorVoltage = 8;
-    public static final double kDitSeconds = 0.5;
+    public static final double kDitSeconds = 0.1;
   }
 }

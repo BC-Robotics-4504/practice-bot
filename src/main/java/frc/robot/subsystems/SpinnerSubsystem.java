@@ -129,33 +129,74 @@ public class SpinnerSubsystem extends SubsystemBase {
         return composeMorseSentance(wordCommands.toArray(new Command[0]));
     }
 
-    private Command composeMorseChar(Command... dits) {
-        Command command = dits[0].andThen(ditSpace());
+    // private Command composeMorseChar(Command... dits) {
+    //     Command command = dits[0].andThen(ditSpace());
 
-        for (int i = 1; i < dits.length-1; i++) {
-           command = command.andThen(dits[i]).andThen(ditSpace());
+    //     for (int i = 1; i < dits.length-1; i++) {
+    //        command = command.andThen(dits[i]).andThen(ditSpace());
+    //     }
+
+    //     return command.andThen(dits[dits.length-1]);
+    // }
+
+    // private Command composeMorseWord(Command... chars) {
+    //     Command command = chars[0].andThen(characterSpace());
+
+    //     for (int i = 1; i < chars.length-1; i++) {
+    //        command = command.andThen(chars[i]).andThen(characterSpace());
+    //     }
+
+    //     return command.andThen(chars[chars.length-1]);
+    // }
+
+    // private Command composeMorseSentance(Command... words) {
+    //     Command command = words[0].andThen(wordSpace());
+
+    //     for (int i = 1; i < words.length-1; i++) {
+    //        command = command.andThen(words[i]).andThen(wordSpace());
+    //     }
+
+    //     return command.andThen(words[words.length-1]);
+    // }
+    private Command composeMorseChar(Command... dits) {
+        ArrayList<Command> commands = new ArrayList<>();
+
+        for (int i = 0; i < dits.length; i++) {
+            commands.add(dits[i]);
+
+            if (i < dits.length - 1) {
+                commands.add(ditSpace());
+            }
         }
 
-        return command.andThen(dits[dits.length-1]);
+        return Commands.sequence(commands.toArray(new Command[0]));
     }
 
     private Command composeMorseWord(Command... chars) {
-        Command command = chars[0].andThen(characterSpace());
+        ArrayList<Command> commands = new ArrayList<>();
 
-        for (int i = 1; i < chars.length-1; i++) {
-           command = command.andThen(chars[i]).andThen(characterSpace());
+        for (int i = 0; i < chars.length; i++) {
+            commands.add(chars[i]);
+
+            if (i < chars.length - 1) {
+                commands.add(characterSpace());
+            }
         }
 
-        return command.andThen(chars[chars.length-1]);
+        return Commands.sequence(commands.toArray(new Command[0]));
     }
 
     private Command composeMorseSentance(Command... words) {
-        Command command = words[0].andThen(wordSpace());
+        ArrayList<Command> commands = new ArrayList<>();
 
-        for (int i = 1; i < words.length-1; i++) {
-           command = command.andThen(words[i]).andThen(wordSpace());
+        for (int i = 0; i < words.length; i++) {
+            commands.add(words[i]);
+
+            if (i < words.length - 1) {
+                commands.add(wordSpace());
+            }
         }
 
-        return command.andThen(words[words.length-1]);
+        return Commands.sequence(commands.toArray(new Command[0]));
     }
 }
