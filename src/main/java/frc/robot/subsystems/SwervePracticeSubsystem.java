@@ -12,12 +12,13 @@ import frc.robot.Constants.sConstants;
 public class SwervePracticeSubsystem  extends SubsystemBase{
     SparkMax m_swervePractice; // Mad Skillz W Aura + Even more MAd Skillz
     SparkClosedLoopController m_Controller;
-
+ 
     public void swervePracticeSubsystem() {
         m_swervePractice = new SparkMax(
             sConstants.sDriveCanId,
             MotorType.kBrushless
         );
+        m_Controller = m_swervePractice.getClosedLoopController();
     }
     public Command sixtySeven() {
         return runOnce(
