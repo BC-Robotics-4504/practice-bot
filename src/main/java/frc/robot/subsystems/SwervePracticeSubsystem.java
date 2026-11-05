@@ -10,7 +10,7 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants.sConstants;
 
 public class SwervePracticeSubsystem  extends SubsystemBase{
-    SparkMax m_swervePractice; // Mad Skillz W Aura
+    SparkMax m_swervePractice; // Mad Skillz W Aura + Even more MAd Skillz
     SparkClosedLoopController m_Controller;
 
     public void swervePracticeSubsystem() {
