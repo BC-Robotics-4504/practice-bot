@@ -8,7 +8,7 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants.koolConstants;
 
 public class ultracoolfunlookingspinnySubsytem extends SubsystemBase{
-    SparkMax m_67ebikeMotor;
+    SparkMax m_67ebikeMotor; //Absolute W Skibidi Rizz
 
     public ultracoolfunlookingspinnySubsytem() {
         m_67ebikeMotor = new SparkMax(
