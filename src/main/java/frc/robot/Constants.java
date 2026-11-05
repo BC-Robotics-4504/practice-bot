@@ -4,6 +4,7 @@
 
 package frc.robot;
 
+
 /**
  * The Constants class provides a convenient place for teams to hold robot-wide numerical or boolean
  * constants. This class should not be used for any other purpose. All constants should be declared
@@ -16,11 +17,16 @@ public final class Constants {
   public static class OperatorConstants {
     public static final int kDriverControllerPort = 0;
   } 
+
+  public static final class SwerveConstants {
+   public static final int kSwerveCanId = 11;
+  }
+
   public static final class SpinnerConstants{
     public static final int kMotorVoltage = 4;
     public static final int kFastMotorVoltage = 8;
     public static final int kMotorCanId = 50;
     public static final int kMotorVoltage2 = -4;
     public static final int kFastMotorVoltage2 = -8;
-}
+  }
 }
