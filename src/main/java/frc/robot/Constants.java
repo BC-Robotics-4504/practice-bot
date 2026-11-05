@@ -24,7 +24,7 @@ public final class Constants {
     public static final int koolMotorCanId = 50;
   }
   public static class sConstants {
-    public static final int sDriveCanId = 31;
+    public static final int sDriveCanId = 50;
   }
 }
 

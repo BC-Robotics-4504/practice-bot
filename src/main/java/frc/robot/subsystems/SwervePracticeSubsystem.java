@@ -13,7 +13,7 @@ public class SwervePracticeSubsystem  extends SubsystemBase{
     SparkMax m_swervePractice; // Mad Skillz W Aura + Even more MAd Skillz
     SparkClosedLoopController m_Controller;
  
-    public void swervePracticeSubsystem() {
+    public SwervePracticeSubsystem() {
         m_swervePractice = new SparkMax(
             sConstants.sDriveCanId,
             MotorType.kBrushless
@@ -24,7 +24,7 @@ public class SwervePracticeSubsystem  extends SubsystemBase{
         return runOnce(
             () -> {
                 m_Controller.setSetpoint(
-                    67,
+                    67.0 / 360.0,
                     ControlType.kPosition
                 );
             }
@@ -34,7 +34,7 @@ public class SwervePracticeSubsystem  extends SubsystemBase{
         return runOnce(
             () -> {
                 m_Controller.setSetpoint(
-                    60,
+                    60.0 / 360.0,
                     ControlType.kPosition
                 ); 
             }
@@ -44,7 +44,7 @@ public class SwervePracticeSubsystem  extends SubsystemBase{
         return runOnce(
             () -> {
                 m_Controller.setSetpoint(
-                    70,
+                    70.0 / 360.0,
                     ControlType.kPosition
                 );
             }
@@ -54,7 +54,7 @@ public class SwervePracticeSubsystem  extends SubsystemBase{
         return runOnce(
             () -> {
                 m_Controller.setSetpoint(
-                    0,
+                    0.0,
                     ControlType.kPosition
                 );
             }
