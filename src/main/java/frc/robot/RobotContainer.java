@@ -33,7 +33,7 @@ public class RobotContainer {
   public RobotContainer() {
     // Configure the trigger bindings
     configureBindings();
-    m_driverController.rightTrigger().onTrue(topRightSystem.rightSystemDrive());
+    m_driverController.rightTrigger().onTrue(topRightSystem.rightSystemDrive()); // hopefully this nonsense works
     m_driverController.rightTrigger().onTrue(bottomRightSystem.rightSystemDrive());
     m_driverController.rightBumper().onTrue(topRightSystem.rightSystemReverse());
     m_driverController.rightBumper().onTrue(bottomRightSystem.rightSystemReverse());
