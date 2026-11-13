@@ -57,10 +57,18 @@ public class RobotContainer {
    * joysticks}.
    */
   private void configureBindings() {
-    m_driverController.a().onTrue(m_swervePractice.sixtySeven());
-    m_driverController.b().onTrue(m_swervePractice.zero());
-    m_driverController.rightTrigger().onTrue(m_swervePractice.sixty());
-    m_driverController.leftTrigger().onTrue(m_swervePractice.seventy());
+    m_driverController.rightTrigger().onTrue(topRightSystem.rightSystemDrive());
+    m_driverController.rightTrigger().onTrue(bottomRightSystem.rightSystemDrive());
+    m_driverController.rightBumper().onTrue(topRightSystem.rightSystemReverse());
+    m_driverController.rightBumper().onTrue(bottomRightSystem.rightSystemReverse());
+    m_driverController.leftTrigger().onTrue(topLeftSystem.leftSystemDrive());
+    m_driverController.leftTrigger().onTrue(bottomLeftSystem.leftSystemDrive());
+    m_driverController.leftBumper().onTrue(topLeftSystem.leftSystemReverse());
+    m_driverController.leftBumper().onTrue(bottomLeftSystem.leftSystemReverse());
+    m_driverController.a().onTrue(bottomLeftSystem.systemStop());
+    m_driverController.a().onTrue(topLeftSystem.systemStop());
+    m_driverController.a().onTrue(topRightSystem.systemStop());
+    m_driverController.a().onTrue(bottomRightSystem.systemStop());
   }
 
   /**
