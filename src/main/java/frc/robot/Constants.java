@@ -26,6 +26,14 @@ public final class Constants {
   public static class sConstants {
     public static final int sDriveCanId = 50;
   }
+  public static class DriveConstants {
+    public static final int topLeftDriveCanId = 20;
+    public static final int bottomLeftDriveCanId = 30;
+    public static final int topRightDriveCanId = 10;
+    public static final int bottomRightDriveCanId = 40;
+    public static final int driveMotorVoltagePositive = 6;
+    public static final int driveMotorVoltageNegative = -6;
+  }
 }
 
 

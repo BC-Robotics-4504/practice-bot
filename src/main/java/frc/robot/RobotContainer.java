@@ -7,7 +7,7 @@ package frc.robot;
 import frc.robot.Constants.OperatorConstants;
 import frc.robot.commands.Autos;
 import frc.robot.subsystems.ExampleSubsystem;
-import frc.robot.subsystems.SwervePracticeSubsystem;
+import frc.robot.subsystems.SketchyDriveSubsytem;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
@@ -21,7 +21,10 @@ import edu.wpi.first.wpilibj2.command.button.Trigger;
 public class RobotContainer {
   // The robot's subsystems and commands are defined here...
   private final ExampleSubsystem m_exampleSubsystem = new ExampleSubsystem();
-  private final SwervePracticeSubsystem m_swervePractice = new SwervePracticeSubsystem();
+  private final SketchyDriveSubsytem topLeftSystem = new SketchyDriveSubsytem();
+  private final SketchyDriveSubsytem bottomLeftSystem = new SketchyDriveSubsytem();
+  private final SketchyDriveSubsytem topRightSystem = new SketchyDriveSubsytem();
+  private final SketchyDriveSubsytem bottomRightSystem = new SketchyDriveSubsytem(); 
   // Replace with CommandPS4Controller or CommandJoystick if needed
   private final CommandXboxController m_driverController =
       new CommandXboxController(OperatorConstants.kDriverControllerPort);
@@ -30,6 +33,18 @@ public class RobotContainer {
   public RobotContainer() {
     // Configure the trigger bindings
     configureBindings();
+    m_driverController.rightTrigger().onTrue(topRightSystem.rightSystemDrive());
+    m_driverController.rightTrigger().onTrue(bottomRightSystem.rightSystemDrive());
+    m_driverController.rightBumper().onTrue(topRightSystem.rightSystemReverse());
+    m_driverController.rightBumper().onTrue(bottomRightSystem.rightSystemReverse());
+    m_driverController.leftTrigger().onTrue(topLeftSystem.leftSystemDrive());
+    m_driverController.leftTrigger().onTrue(bottomLeftSystem.leftSystemDrive());
+    m_driverController.leftBumper().onTrue(topLeftSystem.leftSystemReverse());
+    m_driverController.leftBumper().onTrue(bottomLeftSystem.leftSystemReverse());
+    m_driverController.a().onTrue(bottomLeftSystem.systemStop());
+    m_driverController.a().onTrue(topLeftSystem.systemStop());
+    m_driverController.a().onTrue(topRightSystem.systemStop());
+    m_driverController.a().onTrue(bottomRightSystem.systemStop());
   }
 
   /**
