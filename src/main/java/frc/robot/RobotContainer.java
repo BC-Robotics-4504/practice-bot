@@ -7,7 +7,8 @@ package frc.robot;
 import frc.robot.Constants.OperatorConstants;
 import frc.robot.commands.Autos;
 import frc.robot.subsystems.ExampleSubsystem;
-import frc.robot.subsystems.SketchyDriveSubsytem;
+import frc.robot.subsystems.SketchyDriveSubsytemRight;
+import frc.robot.subsystems.SketchyDriveSubsystemLeft;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
@@ -21,10 +22,10 @@ import edu.wpi.first.wpilibj2.command.button.Trigger;
 public class RobotContainer {
   // The robot's subsystems and commands are defined here...
   private final ExampleSubsystem m_exampleSubsystem = new ExampleSubsystem();
-  private final SketchyDriveSubsytem topLeftSystem = new SketchyDriveSubsytem();
-  private final SketchyDriveSubsytem bottomLeftSystem = new SketchyDriveSubsytem();
-  private final SketchyDriveSubsytem topRightSystem = new SketchyDriveSubsytem();
-  private final SketchyDriveSubsytem bottomRightSystem = new SketchyDriveSubsytem(); 
+  private final SketchyDriveSubsystemLeft topLeftSystem = new SketchyDriveSubsystemLeft();
+  private final SketchyDriveSubsystemLeft bottomLeftSystem = new SketchyDriveSubsystemLeft();
+  private final SketchyDriveSubsytemRight topRightSystem = new SketchyDriveSubsytemRight();
+  private final SketchyDriveSubsytemRight bottomRightSystem = new SketchyDriveSubsytemRight(); 
   // Replace with CommandPS4Controller or CommandJoystick if needed
   private final CommandXboxController m_driverController =
       new CommandXboxController(OperatorConstants.kDriverControllerPort);
