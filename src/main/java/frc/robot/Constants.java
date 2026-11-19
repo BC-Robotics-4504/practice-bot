@@ -34,6 +34,10 @@ public final class Constants {
     public static final int driveMotorVoltagePositive = 6;
     public static final int driveMotorVoltageNegative = -6;
   }
+  public static class ExampleConstants {
+    public static final int exampleSparkMaxCanId = 20;
+    public static final int exampleMotorVoltage = 8;
+  }
 }
 
 
