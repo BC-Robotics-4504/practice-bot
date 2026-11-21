@@ -16,4 +16,29 @@ public final class Constants {
   public static class OperatorConstants {
     public static final int kDriverControllerPort = 0;
   }
+  public static class koolConstants {
+    public static final int koolMotorVoltage1 = 4;
+    public static final int koolMotorVoltage2 = 8;
+    public static final int koolMotorVoltageN1 = -4;
+    public static final int koolMotorVoltageN2 = -8;
+    public static final int koolMotorCanId = 50;
+  }
+  public static class sConstants {
+    public static final int sDriveCanId = 50;
+  }
+  public static class DriveConstants {
+    public static final int topLeftDriveCanId = 20;
+    public static final int bottomLeftDriveCanId = 30;
+    public static final int topRightDriveCanId = 10;
+    public static final int bottomRightDriveCanId = 40;
+    public static final int driveMotorVoltagePositive = 6;
+    public static final int driveMotorVoltageNegative = -6;
+  }
+  public static class ExampleConstants {
+    public static final int exampleSparkMaxCanId = 20;
+    public static final int exampleMotorVoltage = 8;
+  }
 }
+
+
+
