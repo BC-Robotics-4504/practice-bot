@@ -29,7 +29,7 @@ public class CustomExampleSparkMAXSubsystem extends SubsystemBase {
     }
     /*
     Also make sure to duplicate the above method but with zero so you can stop the motor.
-    !! For the zero dupe, you don't need to make zero a constant because it will always be a zero, no need to easily change it.
+    !! For the zero dupe, you don't need to make zero a constant because it will always be a zero, no need to easily change it. !!
      */
 
     public Command exampleSparkMaxMethodRotate() { // This Method will demonstrate a subsystem that rotates to a certain point.
